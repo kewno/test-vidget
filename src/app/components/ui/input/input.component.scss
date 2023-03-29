@@ -1,0 +1,11 @@
+.input {
+  display: flex;
+  color: var(--light-dark);
+  &__elem {
+    font-size: 18px;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--light-dark);
+    border-radius: 3px;
+  }
+}

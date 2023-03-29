@@ -1,0 +1,16 @@
+.select {
+  display: flex;
+  &__elem {
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    color: var(--light-dark);
+    border-radius: 3px;
+    border: 1px solid var(--light-dark);
+  }
+  &__option {
+    font-size: 18px;
+    color: var(--light-dark);
+  }
+}
+

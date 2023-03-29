@@ -1,0 +1,24 @@
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__btn {
+    width: 100px;
+  }
+}
+
+.filter-body {
+  display: flex;
+  align-items: center;
+
+  &__headline {
+    font-size: 25px;
+  }
+  &__filter {
+
+    display: flex;
+    margin-left: 30px;
+  }
+}
+

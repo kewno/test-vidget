@@ -1,0 +1,11 @@
+<div class="image">
+  <div *ngIf="path; else pathNo">
+    <img class="image__elem" src="{{path}}" alt="{{name}}">
+  </div>
+
+  <ng-template #pathNo>
+    <img class="image__elem" src="./../../assets/img/no-found.jpg" alt="{{name}}">
+  </ng-template>
+
+
+</div>

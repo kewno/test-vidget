@@ -1,0 +1,46 @@
+<div class="ui-kit">
+  <div class="ui-kit__article">
+    <app-article></app-article>
+  </div>
+
+  <div class="ui-kit__image">
+    <app-image path="https://ledpremium.by/upload/iblock/489/tablichka_pvkh_informatsionnyy_znak_zlaya_sobaka_200kh200_mm_rexant.jpg"></app-image>
+  </div>
+
+  <div class="ui-kit__input">
+    <app-input text="{{text}}" (onValueChange)="setInput($event.data)"></app-input>
+    {{text}}
+  </div>
+
+  <div class="ui-kit__select">
+    <app-select></app-select>
+  </div>
+  <app-modal
+    *ngIf="modal"
+    headline="Уведомление"
+    text="Я знаю что scroll надо убрать Закрой и не трогай тут больше"
+    (close)="modal = false"
+  >
+  </app-modal>
+
+  <div class="ui-kit__pagination">
+    <app-pagination></app-pagination>
+  </div>
+
+  <div class="ui-kit__menu">
+    <app-menu></app-menu>
+  </div>
+
+  <div class="ui-kit__buttons">
+    <div class="ui-kit__button">
+      <app-btn text='Отключенная кнопка' [dis]="true"></app-btn>
+    </div>
+    <div class="ui-kit__button">
+      <app-btn text='Кнопка'></app-btn>
+    </div>
+    <div class="ui-kit__button">
+      <app-btn id="btn-href" href='/' text='Ссылка'></app-btn>
+    </div>
+  </div>
+</div>
+

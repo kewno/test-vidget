@@ -1,0 +1,9 @@
+<div class="input">
+  <input class="input__elem"
+         [(ngModel)]="text"
+         (input)="this.onValueChange.emit($event)"
+         type="{{type}}"
+         id="{{id}}"
+         name="{{name}}"
+         placeholder="{{placeholder}}">
+</div>

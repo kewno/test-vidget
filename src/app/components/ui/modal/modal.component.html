@@ -1,0 +1,9 @@
+<div class="backdrop" (click)="close.emit()"></div>
+
+<div class="modal" >
+  <h3 class="modal__title">{{headline}}</h3>
+  <p class="modal__text">{{text}}</p>
+  <div class="modal__btn">
+    <app-btn (click)="close.emit()" text="Понятно"></app-btn>
+  </div>
+</div>
