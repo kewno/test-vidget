@@ -10,9 +10,13 @@ export class BtnComponent {
   @Input() href: string = ''
   @Input() text: string = ''
   @Input() id: string = ''
-  // @Input() func: any = ''
+  @Input() func: any
 
   // constructor() {
   //   this.dis = false
   // }
+
+  workFunc() {
+    return () => this.func()
+  }
 }

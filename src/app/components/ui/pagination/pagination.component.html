@@ -1,5 +1,10 @@
 <div class="pagination">
   <p class="pagination__elem pagination__elem_disable">&lt;</p>
-  <a routerLink="{{item.href}}" routerLinkActive="pagination__elem_active" *ngFor="let item of items" class="pagination__elem pagination__elem">{{item.text}}</a>
+  <a routerLink="{{item.href}}" routerLinkActive="pagination__elem_active" *ngFor="let item of items" class="pagination__elem">{{item.text}}</a>
   <p class="pagination__elem pagination__elem">&gt;</p>
 </div>
+
+
+<!--[routerLink]="href+'/'+item.href"-->
+<!--routerLink="{{href+'/'+item.href}}"-->
+<!---->

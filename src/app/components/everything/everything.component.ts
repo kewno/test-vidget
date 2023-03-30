@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./everything.component.scss']
 })
 export class EverythingComponent {
+  textSearch: string = ''
 
+  onChanged(increased: any) {
+
+  }
 }

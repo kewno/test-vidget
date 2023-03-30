@@ -22,13 +22,19 @@ import { SelectComponent } from './components/ui/select/select.component';
 import { NewsComponent } from './components/news/news.component';
 import { SearchComponent } from './components/search/search.component';
 import { FilterComponent } from './components/filter/filter.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 
 const appRoutes: Routes = [
   {path: 'ui-kit', component: UiKitComponent},
   {path: 'headlines', component: HeadlinesComponent},
-  {path: 'everything', component: EverythingComponent},
+  {path: 'everything', component: EverythingComponent, children: [
+    {path: '**', component: EverythingComponent}
+  ]},
+  // {path: 'everything', component: EverythingComponent},
+  // {path: 'everything/:id', component: EverythingComponent},
+
   {path: '**', component: NotFoundComponent}
 ]
 
@@ -55,7 +61,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

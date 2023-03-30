@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NewsService} from "./news.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-vidget'
+  articles = []
+
+  constructor(private newsService: NewsService) {
+
+  }
+
+  ngOnInit() {
+    this.newsService.getArticle()
+      .subscribe(response => {
+        console.log(response)
+        this.articles = response.articles
+      })
+  }
 }

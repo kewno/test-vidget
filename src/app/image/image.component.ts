@@ -7,5 +7,5 @@ import {Component, Input} from '@angular/core';
 })
 export class ImageComponent {
   @Input() path: string | undefined
-  @Input() name: string = ''
+  @Input() name: string = 'poster'
 }

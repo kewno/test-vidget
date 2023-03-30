@@ -6,8 +6,18 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent {
+  //@Input() article: any
+
+  ngOnInit() {
+    //console.log(this.article)
+  }
+
+
+
   @Input() headline: string = 'Lorem ipsum'
-  @Input() text: string = 'Lorem ipsum dolor sit amet consectetur adipisicing, elit. Nesciunt, labore aut praesentium laboriosam quae dicta veniam autem sapiente similique temporibus repudiandae quo impedit quos odio maxime quia! Blanditiis, animi, reiciendis.'
+  @Input() description: string = 'Lorem ipsum dolor sit amet consectetur adipisicing, elit. Nesciunt, labore aut praesentium laboriosam quae dicta veniam autem sapiente similique temporibus repudiandae quo impedit quos odio maxime quia! Blanditiis, animi, reiciendis.'
   @Input() textBtn: string = 'Read'
-  @Input() path: string = ''
+
+  @Input() urlToImage: string = ''
+  @Input() url: string = ''
 }
