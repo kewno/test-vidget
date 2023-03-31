@@ -19,12 +19,9 @@ export class FilterComponent {
   getSelectCountry(event: any) {
     this.countrySelectValue.emit(event)
   }
+
   getSelectCategory(event: any) {
     this.categorySelectValue.emit(event)
-  }
-
-  changeValue(event: KeyboardEvent) {
-    //this.checkSeachText.emit(event)
   }
 
   getClick() {

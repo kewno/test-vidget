@@ -1,10 +1,10 @@
 <div class="btn" >
   <div *ngIf="href; else hrefNo">
-    <a id="{{id}}" class='btn__elem' [class.btn__elem_disable]="dis" href="{{href}}">{{text}}</a>
+    <a [id]="id" class='btn__elem' [class.btn__elem_disable]="dis" [href]="href">{{text}}</a>
   </div>
 
   <ng-template #hrefNo>
-    <button id="{{id}}" class='btn__elem' [class.btn__elem_disable]="dis">{{text}}</button>
+    <button [id]="id" class='btn__elem' [class.btn__elem_disable]="dis">{{text}}</button>
   </ng-template>
 </div>
-<!--[ngClass]="{btn_disable:disable}"-->
+

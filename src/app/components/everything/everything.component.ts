@@ -8,28 +8,30 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
   styleUrls: ['./everything.component.scss']
 })
 export class EverythingComponent {
-  textSearch: string = ''
+
+  constructor(private newsService: NewsService, private route: ActivatedRoute, private router: Router) {
+
+  }
+
+  @Output() checkChangePath = new EventEmitter();
+
+  textSearch: string = 'keyword'
   paginationElem = ''
   items : any[] = []
 
   arrPages : any = []
 
-  @Output() checkChangePath = new EventEmitter();
-
   changePath(event: MouseEvent) {
     let page = (event.target as HTMLInputElement).innerHTML
 
-    this.newsService.getArticle({type: 'everything', page: page, keyword: this.textSearch || 'keyword'})
+    this.newsService.getArticle({type: 'everything', page: page, keyword: this.textSearch})
       .subscribe(response => {
-        console.log(response)
         this.items = response.articles
         this.arrPages = this.setPages(response.totalResults)
       })
   }
 
-  constructor(private newsService: NewsService, private route: ActivatedRoute, private router: Router) {
 
-  }
 
   setPages(total: number, pageSize: number = 5) {
     let pages = Math.ceil(total / pageSize)
@@ -67,6 +69,5 @@ export class EverythingComponent {
         this.items = response.articles
         this.arrPages = this.setPages(response.totalResults)
       })
-    console.log(this.textSearch)
   }
 }

@@ -11,12 +11,4 @@ export class BtnComponent {
   @Input() text: string = ''
   @Input() id: string = ''
   @Input() func: any
-
-  // constructor() {
-  //   this.dis = false
-  // }
-
-  // workFunc() {
-  //   return () => this.func()
-  // }
 }

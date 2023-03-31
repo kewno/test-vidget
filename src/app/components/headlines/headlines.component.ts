@@ -8,8 +8,14 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./headlines.component.scss']
 })
 export class HeadlinesComponent {
+
+  constructor(private newsService: NewsService, private route: ActivatedRoute, private router: Router) {
+
+  }
+
   @Output() countrySelectValue = new EventEmitter();
   @Output() categorySelectValue = new EventEmitter();
+  @Output() checkChangePath = new EventEmitter();
 
   getSelectCountry(event: any) {
     this.country = (event.target as HTMLInputElement).value
@@ -19,7 +25,6 @@ export class HeadlinesComponent {
     this.category = (event.target as HTMLInputElement).value
     this.categorySelectValue.emit()
   }
-
 
   country = 'us'
   category = ''
@@ -35,11 +40,9 @@ export class HeadlinesComponent {
     'sa', 'se', 'sg', 'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za']
 
   paginationElem = ''
+
   items : any[] = []
-
   arrPages : any = []
-
-  @Output() checkChangePath = new EventEmitter();
 
   changePath(event: MouseEvent) {
     let page = (event.target as HTMLInputElement).innerHTML
@@ -51,10 +54,6 @@ export class HeadlinesComponent {
       })
   }
 
-  constructor(private newsService: NewsService, private route: ActivatedRoute, private router: Router) {
-
-  }
-
   setPages(total: number, pageSize: number = 5) {
     let pages = Math.ceil(total / pageSize)
 
@@ -64,7 +63,6 @@ export class HeadlinesComponent {
     }
     return arr
   }
-
 
   setFirstPage() {
     this.router.navigate(['1'], {relativeTo: this.route});
@@ -79,7 +77,6 @@ export class HeadlinesComponent {
         this.arrPages = this.setPages(response.totalResults)
       })
   }
-
 
   checkClick() {
     this.setFirstPage()

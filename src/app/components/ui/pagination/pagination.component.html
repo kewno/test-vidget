@@ -1,10 +1,6 @@
 <div class="pagination">
-  <p class="pagination__elem pagination__elem_disable" (click) = "setPortionsNumber(-1)">&lt;</p>
-  <a routerLink="{{item}}" (click)="changePath($event)" routerLinkActive="pagination__elem_active" *ngFor="let item of portionsElem" class="pagination__elem">{{item}}</a>
+  <p class="pagination__elem pagination__elem_disable" (click)="setPortionsNumber(-1)">&lt;</p>
+  <a [routerLink]="item" (click)="changePath($event)" routerLinkActive="pagination__elem_active" *ngFor="let item of portionsElem" class="pagination__elem">{{item}}</a>
   <p class="pagination__elem" (click) = "setPortionsNumber(1)">&gt;</p>
 </div>
 
-
-<!--[routerLink]="href+'/'+item.href"-->
-<!--routerLink="{{href+'/'+item.href}}"-->
-<!---->

@@ -1,6 +1,4 @@
 import {Component, EventEmitter, Input, Output, SimpleChanges} from '@angular/core';
-import {Router} from "@angular/router";
-
 
 @Component({
   selector: 'app-pagination',
@@ -28,7 +26,7 @@ export class PaginationComponent {
     }
   }
 
-  setPortions(total: number, portionSize: number = 5) {
+  setPortions(total: number) {
 
     let portion = total
     let arr = []

@@ -8,11 +8,11 @@
       </ng-template>
 
       <div class="article__btn">
-        <app-btn text="{{textBtn}}" href="{{url}}"></app-btn>
+        <app-btn [text]="textBtn" href="{{url}}"></app-btn>
       </div>
     </div>
     <div class="article__img">
-        <app-image path="{{urlToImage}}"></app-image>
+        <app-image [path]="urlToImage"></app-image>
     </div>
   </div>
 </div>

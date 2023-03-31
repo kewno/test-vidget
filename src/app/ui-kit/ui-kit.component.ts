@@ -11,7 +11,5 @@ export class UiKitComponent {
 
   setInput(newText: string) {
     this.text = newText
-    console.log(newText)
   }
-  // href: string | undefined = '123'
 }

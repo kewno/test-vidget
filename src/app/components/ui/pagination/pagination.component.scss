@@ -10,7 +10,8 @@
     color: var(--blue);
     border-radius: 3px;
     &_disable {
-
+      cursor: default;
+      opacity: 0.8;
     }
 
     &_active {

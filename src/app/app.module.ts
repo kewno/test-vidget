@@ -14,7 +14,6 @@ import { ModalComponent } from './components/ui/modal/modal.component';
 import { MenuComponent } from './components/ui/menu/menu.component';
 import { EverythingComponent } from './components/everything/everything.component';
 import { HeadlinesComponent } from './components/headlines/headlines.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { PaginationComponent } from './components/ui/pagination/pagination.component';
 import { ImageComponent } from './components/ui/image/image.component';
 import { InputComponent } from './components/ui/input/input.component';
@@ -36,10 +35,6 @@ const appRoutes: Routes = [
     {path: ':id', component: EverythingComponent}
   ]},
   {path: '**', redirectTo: '/everything/1'},
-  //{path: 'everything', component: EverythingComponent},
-  //{path: 'everything/:id', component: EverythingComponent},
-
-  //{path: '**', redirectTo: '/everything'}
 ]
 
 @NgModule({
@@ -52,7 +47,6 @@ const appRoutes: Routes = [
     MenuComponent,
     EverythingComponent,
     HeadlinesComponent,
-    NotFoundComponent,
     PaginationComponent,
     ImageComponent,
     InputComponent,
