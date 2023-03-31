@@ -1,9 +1,9 @@
 <div class="everything">
   <div class="everything__search">
-    <app-search></app-search>
+    <app-search (checkClick)='checkClick()' (checkSeachText)='checkSeachText($event)'></app-search>
   </div>
   <div class="everything__news">
-    <app-news search="{{textSearch}}"></app-news>
+    <app-news [items]="items" [pages]="arrPages" (checkChangePath)='changePath($event)'></app-news>
   </div>
 
 </div>

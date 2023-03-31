@@ -12,5 +12,5 @@ export class InputComponent {
   @Input() name: string = ''
   @Input() placeholder: string = ''
 
-  @Output() onValueChange: EventEmitter<any> = new EventEmitter<any>();
+
 }

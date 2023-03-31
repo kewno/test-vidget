@@ -1,5 +1,6 @@
 <div class="select">
-  <select  class="select__elem" name="{{name}}" id="{{id}}">
-    <option class="select__option" *ngFor="let item of items" value="{{item.value}}">{{item.text}}</option>
+  <select  class="select__elem" (change)="getSelect($event)" name="{{name}}" id="{{id}}">
+    <option class="select__option" disabled selected>{{placeholder}}</option>
+    <option class="select__option" *ngFor="let item of items" value="{{item}}">{{item}}</option>
   </select>
 </div>

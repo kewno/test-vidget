@@ -16,7 +16,7 @@ export class BtnComponent {
   //   this.dis = false
   // }
 
-  workFunc() {
-    return () => this.func()
-  }
+  // workFunc() {
+  //   return () => this.func()
+  // }
 }

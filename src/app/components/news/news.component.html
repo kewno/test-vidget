@@ -2,14 +2,14 @@
   <div class="news-elems">
     <div *ngFor="let item of items" class="news-elems__elem">
       <app-article
-        description="{{item.description}}"
-        headline="{{item.title}}"
-        url="{{item.url}}"
-        urlToImage="{{item.urlToImage}}"
+        [description]="item.description"
+        [headline]="item.title"
+        [url]="item.url"
+        [urlToImage]="item.urlToImage"
       ></app-article>
     </div>
   </div>
   <div class="news__pagination">
-    <app-pagination [items]="[{text: '1', href: '1'}, {text: '2', href: '2'}, {text: '3', href: '3'}]"></app-pagination>
+    <app-pagination [items]="pages" (checkChangePath)='changePath($event)'></app-pagination>
   </div>
 </div>

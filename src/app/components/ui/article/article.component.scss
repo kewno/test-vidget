@@ -1,6 +1,6 @@
 .article {
   border: 1px solid red;
-  //padding: 5px 15px;
+
   &__headline {
     font-size: 22px;
     margin: 0;
@@ -19,11 +19,14 @@
   &__img {
     width: 200px;
     height: 200px;
+
+    margin-left: 30px;
   }
 }
 
 .article-body {
   display: flex;
+  justify-content: space-between;
   padding: 10px 20px;
 }
 

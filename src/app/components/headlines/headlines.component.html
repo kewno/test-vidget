@@ -1,9 +1,16 @@
 <div class="headlines">
   <div class="headlines__search">
-    <app-filter></app-filter>
+    <app-filter [categoryElem]="categoryElem"
+                [countryPlace]="countryPlace"
+                [categoryPlace]="categoryPlace"
+                [countryElem]="countryElem"
+                (checkClick)='checkClick()'
+                (countrySelectValue)="getSelectCountry($event)"
+                (categorySelectValue)="getSelectCategory($event)"
+    ></app-filter>
   </div>
   <div class="headlines__news">
-    <app-news></app-news>
+    <app-news [items]="items" [pages]="arrPages" (checkChangePath)='changePath($event)'></app-news>
   </div>
 
 </div>

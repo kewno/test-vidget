@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-select',
@@ -8,5 +8,13 @@ import {Component, Input} from '@angular/core';
 export class SelectComponent {
   @Input() id : string = ''
   @Input() name : string = ''
-  @Input() items : any[] = [{text: 'В1', value: 'V1'}, {text: 'В2', value: 'V2'}, {text: 'В3', value: 'V3'}]
+  @Input() placeholder : string = ''
+  @Input() items : any[] = ['Вариант 1', 'Вариант 2']
+
+  @Output() onSelectValue = new EventEmitter();
+
+  getSelect(event: any) {
+    this.onSelectValue.emit(event)
+  }
+
 }

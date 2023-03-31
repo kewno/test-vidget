@@ -16,7 +16,7 @@ import { EverythingComponent } from './components/everything/everything.componen
 import { HeadlinesComponent } from './components/headlines/headlines.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PaginationComponent } from './components/ui/pagination/pagination.component';
-import { ImageComponent } from './image/image.component';
+import { ImageComponent } from './components/ui/image/image.component';
 import { InputComponent } from './components/ui/input/input.component';
 import { SelectComponent } from './components/ui/select/select.component';
 import { NewsComponent } from './components/news/news.component';
@@ -27,15 +27,19 @@ import {HttpClientModule} from "@angular/common/http";
 
 
 const appRoutes: Routes = [
-  {path: 'ui-kit', component: UiKitComponent},
-  {path: 'headlines', component: HeadlinesComponent},
-  {path: 'everything', component: EverythingComponent, children: [
-    {path: '**', component: EverythingComponent}
-  ]},
-  // {path: 'everything', component: EverythingComponent},
-  // {path: 'everything/:id', component: EverythingComponent},
 
-  {path: '**', component: NotFoundComponent}
+  {path: 'ui-kit', component: UiKitComponent},
+  {path: 'headlines', component: HeadlinesComponent, children: [
+      {path: ':id', component: EverythingComponent}
+    ]},
+  {path: 'everything', component: EverythingComponent, children: [
+    {path: ':id', component: EverythingComponent}
+  ]},
+  {path: '**', redirectTo: '/everything/1'},
+  //{path: 'everything', component: EverythingComponent},
+  //{path: 'everything/:id', component: EverythingComponent},
+
+  //{path: '**', redirectTo: '/everything'}
 ]
 
 @NgModule({

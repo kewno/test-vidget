@@ -14,11 +14,11 @@ export class AppComponent {
 
   }
 
-  ngOnInit() {
-    this.newsService.getArticle()
-      .subscribe(response => {
-        console.log(response)
-        this.articles = response.articles
-      })
-  }
+  // ngOnInit() {
+  //   this.newsService.getArticle()
+  //     .subscribe(response => {
+  //       console.log(response)
+  //       this.articles = response.articles
+  //     })
+  // }
 }

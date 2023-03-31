@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NewsService} from "../../news.service";
 
 @Component({
@@ -8,17 +8,12 @@ import {NewsService} from "../../news.service";
 })
 export class NewsComponent {
   @Input() items : any[] = []
-  @Input() search : string = ''
+  @Input() pages : any[] = []
 
-  constructor(private newsService: NewsService) {
+  @Output() checkChangePath = new EventEmitter();
 
+  changePath(event: MouseEvent) {
+    this.checkChangePath.emit(event)
   }
 
-  ngOnInit() {
-    this.newsService.getArticle()
-      .subscribe(response => {
-        console.log(response)
-        this.items = response.articles
-      })
-  }
 }

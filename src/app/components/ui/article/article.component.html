@@ -2,14 +2,17 @@
   <h3 class="article__headline">{{headline}}</h3>
   <div class="article-body">
     <div class="article-texts">
-      <p class="article__text">{{description}}</p>
+      <p class="article__text" *ngIf="description; else descriptionNo">{{description}}</p>
+      <ng-template #descriptionNo>
+        <p class="article__text">Сontent not found</p>
+      </ng-template>
+
       <div class="article__btn">
         <app-btn text="{{textBtn}}" href="{{url}}"></app-btn>
       </div>
     </div>
     <div class="article__img">
-        <app-image ></app-image>
-<!--      <app-image path="{{urlToImage}}"></app-image>-->
+        <app-image path="{{urlToImage}}"></app-image>
     </div>
   </div>
 </div>
